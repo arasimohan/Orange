@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AutomationSuite">
+    <test name="HRMLoginTests">
+        <classes>
+            <class name="arasi.test.LoginTest"/>
+        </classes>
+    </test>
+</suite>

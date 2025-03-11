@@ -4,20 +4,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Locale;
 import java.util.Properties;
 
 public class TestBase {
 
-    public WebDriver driver;
+    public static WebDriver driver;
     public Properties prop;
     public String browser;
     public String testURL;
+    public WebDriverWait webDriverWait;
     public TestBase(){
         // Empty constructor
     }
@@ -60,5 +63,6 @@ public class TestBase {
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.get(testURL);
+        webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 }
