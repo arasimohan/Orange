@@ -1,8 +1,10 @@
 package arasi.test;
 
+import arasi.pages.LandingPage;
 import arasi.pages.LoginPage;
 import arasi.utils.DriverManager;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -17,9 +19,11 @@ public class LoginTest extends TestBase{
     }
 
     @Test
-    public void findLoginCreds(){
+    public void validLoginTest(){
         LoginPage loginPage = new LoginPage();
-        loginPage.retrieveLoginDetails();
-
+        LandingPage landingPage = (LandingPage) loginPage.LoginToHRM();
+        Assert.assertEquals(landingPage.getLandingPageTitle(),"Dashboard");
     }
+
+
 }

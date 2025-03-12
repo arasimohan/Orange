@@ -11,17 +11,16 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Locale;
 import java.util.Properties;
 
-public class TestBase {
+public class TestBaseOLD {
 
     public static WebDriver driver;
     public Properties prop;
     public String browser;
     public String testURL;
     public WebDriverWait webDriverWait;
-    public TestBase(){
+    public TestBaseOLD(){
         // Empty constructor
     }
 
