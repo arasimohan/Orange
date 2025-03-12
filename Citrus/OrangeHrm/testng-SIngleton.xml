@@ -2,7 +2,7 @@
 <suite name="AutomationSuite">
     <test name="HRMLoginTests">
         <classes>
-            <class name="arasi.test.LoginTest"/>
+            <class name="arasi.testPages.LoginTest"/>
         </classes>
     </test>
 </suite>

@@ -23,6 +23,7 @@ public class LoginPage  {
     private By loginBtn = By.cssSelector("button.orangehrm-login-button");
 
     public LoginPage(){
+        System.out.println("CTR - LoginPage");
         this.driver = (WebDriver) DriverManager.getDriver();
         webDriverWait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(20));
         PageFactory.initElements(driver,this);
