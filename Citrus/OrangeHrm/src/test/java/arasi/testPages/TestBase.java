@@ -1,11 +1,11 @@
 package arasi.testPages;
 
-import arasi.test.InitTest;
+import arasi.test.InitTestConfig;
 import arasi.utils.DriverManager;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-public class TestBase extends InitTest {
+public class TestBase extends InitTestConfig {
 
     public TestBase(){
         System.out.println("CTR - TestBase");
@@ -18,7 +18,7 @@ public class TestBase extends InitTest {
 
     @AfterClass
     public void tearDown(){
-        DriverManager.quitDriver();
+        //DriverManager.quitDriver();
         System.out.println("AfterClass - tearDown  - TestBase");
     }
 }

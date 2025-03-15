@@ -1,6 +1,5 @@
 package arasi.test;
 
-import arasi.utils.DriverManager;
 import org.openqa.selenium.WebDriver;
 
 import java.io.File;
@@ -9,16 +8,16 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-public class InitTest {
+public class InitTestConfig {
 
     protected WebDriver driver;
     public static Properties prop;
     public static String testBrowser;
     public static String testURL;
 
-    public InitTest()
+    public InitTestConfig()
     {
-        System.out.println("CTR - InitTest");
+        System.out.println("CTR - InitTestConfig");
         loadProperties();
     }
 

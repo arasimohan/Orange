@@ -17,10 +17,12 @@ public class LandingPage {
 
     private By landingPgTitle = By.xpath("//span/*[contains(@class,'oxd-topbar-header-breadcrumb-module')]");
 
+    private String menuNameXpathPre = "//span[contains(@class,'oxd-main-menu-item--name') and text()='";
+    private String menuNameXpathPost = "']";
     public LandingPage(){
-        this.webDriver = (WebDriver) DriverManager.getDriver();
+        this.webDriver = DriverManager.getDriver();
         PageFactory.initElements(webDriver,this);
-        webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(5));
+        webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(15));
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(landingPgTitle));
     }
 
@@ -28,5 +30,15 @@ public class LandingPage {
         return webDriver.findElement(landingPgTitle).getText();
     }
 
-
+    public Object gotoMenu(String menuName){
+        webDriver.findElement(By.xpath(menuNameXpathPre+menuName+menuNameXpathPost)).click();
+        webDriverWait.until(ExpectedConditions.textToBePresentInElementLocated(landingPgTitle,menuName));
+        switch(menuName){
+            case "Admin":
+                return new AdminPage();
+            case "PIM":
+            default:
+                return new PIMpage();
+        }
+    }
 }

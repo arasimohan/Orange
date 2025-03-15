@@ -2,15 +2,11 @@ package arasi.testPages;
 
 import arasi.pages.LandingPage;
 import arasi.pages.LoginPage;
-import arasi.test.InitTest;
+import arasi.test.InitTestConfig;
 import arasi.utils.DriverManager;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import java.time.Duration;
 
 public class LoginTest extends TestBase{
 
@@ -22,7 +18,7 @@ public class LoginTest extends TestBase{
     @BeforeTest
     public void beforeTest(){
         System.out.println("beforeTest - lOGINtEST");
-        DriverManager.getDriver().get(InitTest.testURL);
+        DriverManager.getDriver().get(InitTestConfig.testURL);
     }
 
     @Test
@@ -30,6 +26,8 @@ public class LoginTest extends TestBase{
         LoginPage loginPage = new LoginPage();
         LandingPage landingPage = (LandingPage) loginPage.LoginToHRM();
         Assert.assertEquals(landingPage.getLandingPageTitle(),"Dashboard");
+        landingPage.gotoMenu("Admin");
+        landingPage.gotoMenu("PIM");
     }
 
 

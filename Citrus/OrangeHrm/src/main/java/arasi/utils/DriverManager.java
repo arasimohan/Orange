@@ -1,6 +1,6 @@
 package arasi.utils;
 
-import arasi.test.InitTest;
+import arasi.test.InitTestConfig;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,7 +17,7 @@ public class DriverManager {
     public static WebDriver getDriver(){
 
         if(driver==null){
-            String browser = InitTest.testBrowser;
+            String browser = InitTestConfig.testBrowser;
             switch (browser){
                 case "edge":
                     driver = new EdgeDriver();

@@ -30,7 +30,7 @@ public class LoginPage  {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(usernameInfo));
     }
 
-    public void retrieveLoginDetails(){
+    private void retrieveLoginDetails(){
 
         String name = driver.findElement(usernameInfo).getText();
         String pwd = driver.findElement(passwordInfo).getText();
