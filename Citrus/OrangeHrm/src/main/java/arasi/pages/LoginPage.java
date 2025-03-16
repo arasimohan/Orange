@@ -39,7 +39,7 @@ public class LoginPage  {
         //System.out.println("username - "+username+"....Pwd: "+password);
     }
 
-    public Object LoginToHRM(){
+    public LandingPage LoginToHRM(){
         retrieveLoginDetails();
         driver.findElement(usernameTxt).sendKeys(username);
         driver.findElement(passwordTxt).sendKeys(password);
