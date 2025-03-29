@@ -18,20 +18,20 @@ public class LoginPage  {
 
     private By usernameInfo = By.xpath("//div/p[@class='oxd-text oxd-text--p'][1]");
     private By passwordInfo = By.xpath("//div/p[@class='oxd-text oxd-text--p'][2]");
-    private By usernameTxt = By.xpath("//input[@placeholder='Username']");
-    private By passwordTxt = By.xpath("//input[@placeholder='Password']");
+    private By usernameTxt = By.xpath("//input[@placeholder='username' or @placeholder='Username']");
+    private By passwordTxt = By.xpath("//input[@placeholder='password' or @placeholder='Password']");
     private By loginBtn = By.cssSelector("button.orangehrm-login-button");
 
     public LoginPage(){
         System.out.println("CTR - LoginPage");
         this.driver = (WebDriver) DriverManager.getDriver();
-        webDriverWait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(20));
+        webDriverWait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(25));
         PageFactory.initElements(driver,this);
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(usernameInfo));
     }
 
     private void retrieveLoginDetails(){
-
+        System.out.println("CTR - retrieveLoginDetails");
         String name = driver.findElement(usernameInfo).getText();
         String pwd = driver.findElement(passwordInfo).getText();
         username = name.split(":")[1].trim();

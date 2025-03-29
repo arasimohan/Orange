@@ -24,6 +24,7 @@ public class AdminPageTest extends TestBase {
     @Test
     public void readWebTableTest(){
         AdminPage adminPage = (AdminPage) landingPage.gotoMenu("Admin");
-
+        adminPage.displayTableContents();
+        //adminPage.practiseStringReverse();
     }
 }
